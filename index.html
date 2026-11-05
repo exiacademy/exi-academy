@@ -30,6 +30,8 @@ footer{padding:18px 8px 4px;text-align:center;color:#7f8a9b;font-size:11px;lette
 .training-copy{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:12px 13px;border:1px solid #ffffff20;border-radius:11px;background:#0c121c;color:var(--white);text-align:left;cursor:pointer;font:inherit;transition:background .15s,border-color .15s}
 .training-copy:hover{background:#202b3b;border-color:#f20d18}
 .training-name{font-size:14px;font-weight:700;line-height:1.35}
+.training-new{border-color:#ff626a88;background:linear-gradient(100deg,#351b25,#0c121c 72%)}
+.training-new-badge{display:inline-block;margin-left:8px;padding:3px 7px;border-radius:5px;background:#f20d18;color:#fff;font-size:9px;font-weight:800;letter-spacing:.5px;vertical-align:2px}
 .copy-label{display:inline-flex;align-items:center;gap:6px;flex:none;color:#ff626a;font-size:11px;font-weight:700}
 .copy-label svg{width:16px;height:16px}
 .copy-status{min-height:18px;margin:14px 0 0;color:#8ee0a8;font-size:12px;line-height:1.5}
@@ -93,10 +95,20 @@ html{scroll-behavior:smooth}
 @media(max-width:800px){.download-area{gap:12px}.big-arrow-button{flex-basis:115px;width:115px;height:150px}}
 @media(max-width:650px){.download-area{flex-direction:column}.image-platform-grid{grid-template-columns:1fr;gap:18px}.platform-image-button{max-width:300px}.big-arrow-button{width:145px;height:160px;flex-basis:auto}.platform-caption{font-size:12px}}
 \n
-.platform-install-guide{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16)}
-.platform-install-guide h2{margin:0 0 10px;font-size:clamp(19px,3vw,24px);color:var(--accent,#20c9ee)}
-.platform-install-guide p{line-height:1.6}
-.platform-install-guide a{color:#36c9ee;text-decoration:underline;text-underline-offset:3px}
+.platform-install-guide{margin-top:22px;padding:18px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(255,255,255,.035)}
+.iphone-guide-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.guide-kicker{display:block;margin-bottom:5px;font-size:11px;font-weight:850;letter-spacing:1px;color:#9aaec6}
+.platform-install-guide h2{margin:0 0 6px;font-size:clamp(18px,2.5vw,22px);color:var(--accent,#20c9ee)}
+.platform-install-guide p{line-height:1.5;margin:0}
+.iphone-open-link{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border-radius:10px;background:#153b54;color:#fff!important;font-size:13px;font-weight:800;text-decoration:none!important;white-space:nowrap}
+.iphone-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none;counter-reset:none}
+.iphone-steps li{display:flex;align-items:flex-start;gap:10px;min-width:0;padding:12px;border-radius:12px;background:rgba(0,0,0,.18)}
+.step-number{display:grid;place-items:center;flex:0 0 27px;width:27px;height:27px;border-radius:50%;background:#20b9d6;color:#071522;font-weight:900}
+.iphone-steps strong,.iphone-steps small{display:block}
+.iphone-steps strong{font-size:13px;line-height:1.35}
+.iphone-steps small{margin-top:4px;color:#b7c4d3;font-size:12px;line-height:1.4}
+.iphone-guide-note{margin-top:12px!important;color:#b7c4d3;font-size:12px}
+@media(max-width:700px){.iphone-guide-head{display:block}.iphone-open-link{margin-top:12px}.iphone-steps{grid-template-columns:1fr}.iphone-steps li{padding:10px}.platform-install-guide{padding:14px}}
 \n</style>
 </head>
 <body>
@@ -143,17 +155,21 @@ html{scroll-behavior:smooth}
       <li>Ak Android zobrazí upozornenie, povoľ inštaláciu z daného zdroja a potvrď tlačidlom <strong>Inštalovať</strong>.</li>
     </ol>
     <p class="note">EXI Academy funguje offline. Na inštaláciu je potrebné zariadenie s Androidom. Keďže sa aplikácia neinštaluje z Google Play, Android môže zobraziť bezpečnostné upozornenie.</p>
-    <div class="platform-install-guide">
-      <h2>Ako pridať EXI Academy na iPhone?</h2>
-      <p>iPhone používa webovú verziu (PWA). Nie je potrebné sťahovať APK ani inštalovať aplikáciu z App Store.</p>
-      <ol>
-        <li>Na iPhone otvor <strong>Safari</strong> a prejdi na stránku <a href="https://exiacademy.github.io/exi-academy-iphone/" target="_blank" rel="noopener noreferrer">EXI Academy pre iPhone</a>.</li>
-        <li>V spodnej časti Safari ťukni na ikonu <strong>Zdieľať</strong> (štvorec so šípkou nahor).</li>
-        <li>V ponuke vyber možnosť <strong>Pridať na plochu</strong>. Ak ju nevidíš, posuň ponuku vyššie alebo otvor ďalšie možnosti.</li>
-        <li>Skontroluj názov <strong>EXI Academy</strong> a potvrď tlačidlom <strong>Pridať</strong>.</li>
-        <li>Na ploche iPhonu sa zobrazí ikona EXI Academy. Ťuknutím ju otvoríš podobne ako bežnú aplikáciu.</li>
+    <div class="platform-install-guide iphone-guide">
+      <div class="iphone-guide-head">
+        <div>
+          <span class="guide-kicker">APPLE · IPHONE</span>
+          <h2>Pridanie na plochu iPhonu</h2>
+          <p>iPhone používa webovú verziu EXI Academy. Inštalácia z App Store ani APK nie sú potrebné.</p>
+        </div>
+        <a class="iphone-open-link" href="https://exiacademy.github.io/exi-academy-iphone/" target="_blank" rel="noopener noreferrer">Otvoriť EXI Academy <span aria-hidden="true">↗</span></a>
+      </div>
+      <ol class="iphone-steps">
+        <li><span class="step-number">1</span><span><strong>Otvor stránku v Safari</strong><small>Na iPhone prejdi na EXI Academy cez tlačidlo vyššie.</small></span></li>
+        <li><span class="step-number">2</span><span><strong>Ťukni na Zdieľať</strong><small>V Safari vyber ikonu štvorca so šípkou nahor.</small></span></li>
+        <li><span class="step-number">3</span><span><strong>Vyber Pridať na plochu</strong><small>Potvrď názov EXI Academy tlačidlom Pridať.</small></span></li>
       </ol>
-      <p class="note">Ide o webovú aplikáciu (PWA), nie o aplikáciu z App Store. Na prvé otvorenie a načítanie obsahu je potrebné internetové pripojenie.</p>
+      <p class="iphone-guide-note">Hotovo – ikonu EXI Academy nájdeš na ploche. Prvé načítanie aplikácie a školení vyžaduje internet; uložené školenia potom môžeš používať offline.</p>
     </div>
   </section>
 
@@ -163,6 +179,10 @@ html{scroll-behavior:smooth}
       <p>Kliknutím na školenie skopíruješ jeho odkaz. Potom ho vlož do sťahovača v aplikácii EXI Academy.</p>
     </div>
     <div class="training-list">
+      <button class="training-copy training-new" type="button" data-url="https://github.com/exiacademy/exi-academy/raw/refs/heads/main/skolenia/EXI_Academy_prilby,%20palice,%20okuliare%20zima.zip">
+        <span class="training-name">Lyžiarske prilby, palice a okuliare <span class="training-new-badge">NOVÉ</span></span>
+        <span class="copy-label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" stroke="currentColor" stroke-width="2"/></svg> Kopírovať odkaz</span>
+      </button>
       <button class="training-copy" type="button" data-url="https://github.com/exiacademy/exi-academy/raw/refs/heads/main/skolenia/EXI_Academy_AMULET_Montaz_a_Servis.zip">
         <span class="training-name">AMULET – Montáž a servis</span>
         <span class="copy-label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" stroke="currentColor" stroke-width="2"/></svg> Kopírovať odkaz</span>
